@@ -2,6 +2,9 @@
 
 @section('title','Dashboard');
 
+@push('css')
+    @endpush
+
 @section('content')
     <div class="content">
         <div class="container-fluid">
@@ -419,3 +422,6 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    @endpush
