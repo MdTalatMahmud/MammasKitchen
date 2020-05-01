@@ -30,16 +30,25 @@
     <div id="app">
 
         <div class="wrapper ">
-            @include('layouts.include.sidebar')
+            @if(Request::is('admin*'))
+                @include('layouts.include.sidebar')
+                @endif
+
 
             <div class="main-panel">
                 <!-- Navbar -->
-                @include('layouts.include.topbar')
+                @if(Request::is('admin*'))
+                    @include('layouts.include.topbar')
+                    @endif
                 <!-- End Navbar -->
 
+                    {{--                adding the contents--}}
                     @yield('content')
 
-                @include('layouts.include.footer')
+                    {{--                footer adding--}}
+                @if(Request::is('admin*'))
+                    @include('layouts.include.footer')
+                    @endif
             </div>
         </div>
 
