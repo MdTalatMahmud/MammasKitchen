@@ -19,7 +19,7 @@
 
                         </div>
                         <div class="card-body">
-                            <form method="get" about="{{route('slider.store')}}" enctype="multipart/form-data">
+                            <form method="post" action="{{route('slider.store')}}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -52,8 +52,8 @@
         </div>
 
 
-
-        @endsection
+    </div>
+@endsection
 
         @push('scripts')
 
