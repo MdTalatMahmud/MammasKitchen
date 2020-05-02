@@ -13,12 +13,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
+
                         <div class="card-header card-header-primary">
                             <h4 class="card-title ">All Sliders</h4>
 
                         </div>
                         <div class="card-body">
-                            <form method="post" about="{{route('slider.store')}}" enctype="multipart/form-data">
+                            <form method="post" action="{{route('slider.store')}}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -51,8 +52,8 @@
         </div>
 
 
-
-        @endsection
+    </div>
+@endsection
 
         @push('scripts')
 

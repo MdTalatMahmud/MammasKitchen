@@ -32,3 +32,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' =>'admin'
         Route::resource('slider', 'SliderController');
     }
 );
+
+

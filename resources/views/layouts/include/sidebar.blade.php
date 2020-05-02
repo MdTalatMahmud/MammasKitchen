@@ -21,10 +21,10 @@
                     <p>Slider</p>
                 </a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="./tables.html">
+            <li class="{{ Request::is('admin/slider/create*') ? 'active': '' }}">
+                <a class="nav-link" href="{{route('slider.create')}}">
                     <i class="material-icons">content_paste</i>
-                    <p>Table List</p>
+                    <p>Add New</p>
                 </a>
             </li>
             <li class="nav-item ">
