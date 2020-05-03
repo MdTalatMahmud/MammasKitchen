@@ -9,6 +9,15 @@
 
 @section('content')
     <div class="content">
+
+{{--        message showing--}}
+        @if(session('successMsg'))
+            <div class="alert alert-dismissible alert-success">
+                <button type="button" class="close" data-dismiss="alert">x</button>
+                <strong>{{session('successMsg')}}</strong>
+            </div>
+        @endif
+
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">

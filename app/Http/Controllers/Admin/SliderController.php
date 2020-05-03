@@ -72,7 +72,8 @@ class SliderController extends Controller
         $slider->sub_title = $request->sub_title;
         $slider->image = $imagename;
         $slider->save();
-        return redirect()->route('slider.index');
+        //return redirect()->route()->with('successMsg','');
+        return redirect(route('slider.index'))->with('successMsg','Slider successfully saved!');
 
     }
 
