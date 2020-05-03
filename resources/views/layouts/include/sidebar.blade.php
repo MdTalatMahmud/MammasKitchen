@@ -15,7 +15,7 @@
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li class="{{ Request::is('admin/slider*') ? 'active': '' }}">
+            <li class="{{ Request::is('admin/slider') ? 'active': '' }}">
                 <a class="nav-link" href="{{route('slider.index')}}">
                     <i class="material-icons">slideshow</i>
                     <p>Slider</p>
