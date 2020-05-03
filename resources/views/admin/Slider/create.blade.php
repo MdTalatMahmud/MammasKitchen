@@ -8,16 +8,18 @@
     @endpush
 
 @section('content')
+
     <div class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
+
                     <div class="card">
 
                         <div class="card-header card-header-primary">
                             <h4 class="card-title ">All Sliders</h4>
-
                         </div>
+
                         <div class="card-body">
                             <form method="post" action="{{route('slider.store')}}" enctype="multipart/form-data">
                                 @csrf
