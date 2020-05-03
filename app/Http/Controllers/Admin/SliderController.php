@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Slider;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Psy\Util\Str;
 
 class SliderController extends Controller
 {
@@ -41,31 +42,35 @@ class SliderController extends Controller
         $this->validate($request,[
             'title' => 'required',
             'sub_title' => 'required',
-//            'image' => 'required|mimes:jpg,jpeg,png,bmp',
+            'image' => 'required|mimes:jpg,jpeg,png,bmp',
         ]);
-//        $image = $request->file('image');
-//        $slug = str_slug($request->title);
-//        if (isset($image))
-//        {
-//
-//            $currentDate = Carbon::now()->toDateString();
-//            $imagename = $slug . '-' . $currentDate . '-' . uniqid() . '.' . $image->getClientOriginalExtension();
-//            if (!file_exists('uploads/slider'))
-//            {
-//                mkdir('uploads/slider', 0777, true);
-//            }
-//            $image->move('uploads/slider', $imagename);
-//
-//        }
-//        else{
-//            $imagename = 'default.png';
-//        }
+        $image = $request->file('image');
+        //problem is in this line only
+        $slug = str_slug($request->title);
+
+
+        if (isset($image))
+        {
+
+            $currentDate = Carbon::now()->toDateString();
+            $imagename = $slug .'-'. $currentDate .'-'. uniqid() .'.'. $image->getClientOriginalExtension();
+            if (!file_exists('uploads/slider'))
+            {
+                mkdir('uploads/slider', 0777, true);
+            }
+            $image->move('uploads/slider', $imagename);
+
+
+        }
+        else{
+            $imagename = 'default.png';
+        }
 
         //database data adding
         $slider = new Slider();
         $slider->title = $request->title;
         $slider->sub_title = $request->sub_title;
-        //$slider->image = $imagename;
+        $slider->image = $imagename;
         $slider->save();
         return redirect()->route('slider.index');
 
