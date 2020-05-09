@@ -28,7 +28,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table id="table" class="table table-striped table-bordered" style="width:100%">
+                                <table id="table" class="table table-striped " style="width:100%">
                                     <thead class=" text-primary">
                                     <th>
                                         ID
@@ -61,7 +61,20 @@
                                                 <td>{{ $slider -> image }}</td>
                                                 <td>{{ $slider -> created_at }}</td>
                                                 <td>{{ $slider -> updated_at }}</td>
-                                                <td><a href="{{route('slider.edit', $slider->id)}}" class="btn btn-primary">Edit</a></td>
+
+                                                <td><a href="{{route('slider.edit', $slider->id)}}" class="btn btn-primary">Edit</a>
+
+                                                <form id="delete-form-{{$slider->id}}" action="{{route('slider.destroy', $slider->id)}}" style="display: none" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                </form>
+                                                <a href="{{route('slider.edit', $slider->id)}}" class="btn btn-danger"
+                                                    onclick="if(confirm('Are you sure?')){
+                                                        event.preventDefault();
+                                                        document.getElementById('delete-form-{{$slider->id}}').submit();
+                                                    }else{
+                                                        event.preventDefault();
+                                                        }">Delete</a></td>
                                             </tr>
                                             @endforeach
                                     </tbody>

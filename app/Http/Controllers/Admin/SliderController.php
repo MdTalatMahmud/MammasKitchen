@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Slider;
 use Carbon\Carbon;
+use Faker\Provider\File;
 use Illuminate\Http\Request;
 use Psy\Util\Str;
 
@@ -157,6 +158,11 @@ class SliderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $slider = Slider::find($id);
+        if (file_exists('uploads/slider'.$slider->image)){
+            unlink('uploads/slider'.$slider->image);
+        }
+        $slider->delete();
+        return redirect()->back()->with('successMsg', 'Slider Deleted Successfully');
     }
 }
