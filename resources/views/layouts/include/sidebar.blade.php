@@ -27,10 +27,10 @@
                     <p>Add New</p>
                 </a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="./typography.html">
+            <li class="{{ Request::is('admin/category/create*') ? 'active': '' }}">
+                <a class="nav-link" href="{{route('category.create')}}">
                     <i class="material-icons">library_books</i>
-                    <p>Typography</p>
+                    <p>Category Add</p>
                 </a>
             </li>
             <li class="nav-item ">
