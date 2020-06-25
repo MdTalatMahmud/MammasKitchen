@@ -27,16 +27,16 @@
                     <p>Add New</p>
                 </a>
             </li>
-            <li class="{{ Request::is('admin/category/create*') ? 'active': '' }}">
-                <a class="nav-link" href="{{route('category.create')}}">
-                    <i class="material-icons">library_books</i>
+{{--            <li class="{{ Request::is('admin/category/create*') ? 'active': '' }}">--}}
+{{--                <a class="nav-link" href="{{route('category.create')}}">--}}
+{{--                    <i class="material-icons">library_books</i>--}}
+{{--                    <p>Category Add</p>--}}
+{{--                </a>--}}
+{{--            </li>--}}
+            <li class="{{ Request::is('admin/cat/create*') ? 'active': '' }}">
+                <a class="nav-link" href="{{route('cat.create')}}">
+                    <i class="material-icons">content_paste</i>
                     <p>Category Add</p>
-                </a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="./icons.html">
-                    <i class="material-icons">bubble_chart</i>
-                    <p>Icons</p>
                 </a>
             </li>
             <li class="nav-item ">
