@@ -38,7 +38,7 @@
 {{--                                </div>--}}
 {{--                                <div class="col-md-12">--}}
 
-{{--                                    <label class="bmd-label-floating">Image</label>--}}
+{{--                                    <label class="bmd-label-floating">Imag</label>--}}
 {{--                                    <input type="file" class="form-control" name="image" >--}}
 
 {{--                                </div>--}}
