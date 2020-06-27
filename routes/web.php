@@ -30,6 +30,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' =>'admin'
         Route::resource('slider', 'SliderController');
         Route::resource('category', 'CategoryController');
         Route::resource('cat', 'CatController');
+        Route::resource('item', 'ItemController');
     }
 );
 
