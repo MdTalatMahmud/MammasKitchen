@@ -17,7 +17,7 @@
                     <div class="card">
 
                         <div class="card-header card-header-primary">
-                            <h4 class="card-title ">Add cats here</h4>
+                            <h4 class="card-title ">Add category here</h4>
                         </div>
 
                         <div class="card-body">

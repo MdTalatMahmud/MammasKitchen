@@ -21,7 +21,7 @@ class CreateItemsTable extends Migration
             $table->integer('price');
             $table->string('image');
             $table->foreign('category_id')
-                ->references('id')->on('categories')
+                ->references('id')->on('cats')
                 ->onDelete('cascade');
             $table->timestamps();
         });
