@@ -18,13 +18,13 @@
             <li class="{{ Request::is('admin/slider') ? 'active': '' }}">
                 <a class="nav-link" href="{{route('slider.index')}}">
                     <i class="material-icons">slideshow</i>
-                    <p>Slider</p>
+                    <p>Sliders</p>
                 </a>
             </li>
             <li class="{{ Request::is('admin/slider/create*') ? 'active': '' }}">
                 <a class="nav-link" href="{{route('slider.create')}}">
                     <i class="material-icons">content_paste</i>
-                    <p>Add New</p>
+                    <p>Add New Slider</p>
                 </a>
             </li>
 {{--            <li class="{{ Request::is('admin/category/create*') ? 'active': '' }}">--}}
@@ -37,6 +37,12 @@
                 <a class="nav-link" href="{{route('cat.create')}}">
                     <i class="material-icons">content_paste</i>
                     <p>Category Add</p>
+                </a>
+            </li>
+            <li class="{{ Request::is('admin/item/*') ? 'active': '' }}">
+                <a class="nav-link" href="{{route('item.index')}}">
+                    <i class="material-icons">content_paste</i>
+                    <p>Items</p>
                 </a>
             </li>
             <li class="nav-item ">
