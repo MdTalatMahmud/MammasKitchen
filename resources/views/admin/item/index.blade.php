@@ -39,9 +39,9 @@
                                     <th>
                                         Image
                                     </th>
-{{--                                    <th>--}}
-{{--                                        Category Name--}}
-{{--                                    </th>--}}
+                                    <th>
+                                        Category Name
+                                    </th>
                                     <th>
                                         Description
                                     </th>
@@ -64,7 +64,7 @@
                                                 <td>{{ $key+1 }}</td>
                                                 <td>{{ $item -> name }}</td>
                                                 <td>{{ $item -> image }}</td>
-{{--                                                <td>{{ $item -> cat->name }}</td>--}}
+                                                <td>{{ $item -> cat['name'] }}</td>
                                                 <td>{{ $item -> description }}</td>
                                                 <td>{{ $item -> price }}</td>
                                                 <td>{{ $item -> created_at }}</td>
