@@ -8,6 +8,13 @@
 
     <title>Mamma's Kitchen</title>
 
+    @if(session('successMsg'))
+        <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            <strong>{{session('successMsg')}}</strong>
+        </div>
+    @endif
+
     <link rel="stylesheet" href="{{ asset('frontend') }}/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('frontend') }}/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('frontend') }}/css/owl.carousel.css">
@@ -152,7 +159,7 @@
                                 <ul id="filter-list" class="clearfix">
                                     <li class="filter" data-filter="all">All</li>
                                     @foreach($cats as $cat)
-                                        <li class="filter" data-filter="#{{$cat->slug}}">{{ $cat->name }}<span class="badge"> 3</span></li>
+                                        <li class="filter" data-filter="#{{$cat->slug}}">{{ $cat->name }}<span class="badge"> 3 </span></li>
                                     @endforeach
 {{--                                    <li class="filter" data-filter=".breakfast">Breakfast</li>--}}
 {{--                                    <li class="filter" data-filter=".special">Special</li>--}}
@@ -664,7 +671,8 @@
             <div class=" section-content">
                 <div class="row">
                     <div class="col-md-5 col-sm-6">
-                        <form class="reservation-form" method="post" action="reserve.php">
+                        <form class="reservation-form" method="post" action="{{route('reservation.reserve')}}">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6 col-sm-6">
                                     <div class="form-group">
@@ -680,7 +688,7 @@
                                         <input type="tel" class="form-control reserve-form empty iconified" name="phone" id="phone" required="required" placeholder="  &#xf095;  Phone">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control reserve-form empty iconified" name="datepicker" id="datepicker" required="required" placeholder="&#xf017;  Time">
+                                        <input type="text" class="form-control reserve-form empty iconified" name="dateandtime" id="datepicker" required="required" placeholder="&#xf017;  Time">
                                     </div>
                                 </div>
 
