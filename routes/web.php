@@ -32,6 +32,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' =>'admin'
 //        Route::resource('category', 'CategoryController');
         Route::resource('cat', 'CatController');
         Route::resource('item', 'ItemController');
+        Route::get('reservation', 'ReservationController@index')->name('reservation.index');
     }
 );
 
