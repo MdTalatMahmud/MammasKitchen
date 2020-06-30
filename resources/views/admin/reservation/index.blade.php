@@ -76,28 +76,42 @@
                                                 </td>
                                                 <td>{{ $reservation -> created_at }}</td>
 
-                                                <td><a href="" class="btn btn-primary">Edit</a>
+{{--                                                <td><a href="" class="btn btn-primary">Edit</a>--}}
+                                                <td>
+                                                @if($reservation->status == false)
+                                                    <form id="status-form-{{$reservation->id}}" action="{{ route('reservation.status', $reservation->id) }}" style="display: none" method="post">
+                                                        @csrf
+                                                    </form>
+                                                    <a href="#" class="btn btn-info"
+                                                       onclick="if(confirm('Are you sure?')){
+                                                           event.preventDefault();
+                                                           document.getElementById('status-form-{{$reservation->id}}').submit();
+                                                           }else{
+                                                           event.preventDefault();
+                                                           }">Done</a>
+                                                @endif
 
-                                                <form id="delete-form-{{$reservation->id}}" action="" style="display: none" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                </form>
-                                                <a href="{{route('slider.edit', $reservation->id)}}" class="btn btn-danger"
-                                                    onclick="if(confirm('Are you sure?')){
-                                                        event.preventDefault();
-                                                        document.getElementById('delete-form-{{$reservation->id}}').submit();
-                                                    }else{
-                                                        event.preventDefault();
-                                                        }">Delete</a>
+                                                    <form id="status-form-{{$reservation->id}}" action="{{ route('reservation.destroy', $reservation->id) }}" style="display: none" method="post">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                    </form>
+                                                    <a href="#" class="btn btn-danger"
+                                                       onclick="if(confirm('Are you sure to delete?')){
+                                                           event.preventDefault();
+                                                           document.getElementById('status-form-{{$reservation->id}}').submit();
+                                                           }else{
+                                                           event.preventDefault();
+                                                           }">Delete</a>
+                                                </td>
                                             </tr>
-                                            @endforeach
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
-
+{{--                {{route('slider.edit', $reservation->id)}}--}}
             </div>
         </div>
     </div>
